@@ -1,0 +1,111 @@
+# Lista de Exercícios
+
+---
+
+## Exercício 1
+
+### 1.1 Problema
+
+O código pode dar erro se o valor de `b` for 0 (divisão por zero).
+
+### 1.2 Correção
+
+```python
+def divide(a, b):
+    if b == 0:
+        raise ValueError("Divisão por zero não permitida")
+    return a / b
+```
+
+---
+
+## Exercício 2
+
+Os códigos são parecidos, mas nao eh duplicaçao.
+Similaridade: **0.80**
+
+Não são iguais, pois um também verifica se o usuário está ativo.
+
+```java
+public boolean isAdult(User user){
+    if(user.getAge() >= 18){
+        return true;
+    }
+    return false;
+}
+```
+
+```java
+public boolean canAccessRestrictedArea(User user){
+    if(user.isActive() && user.getAge() >= 18){
+        return true;
+    }
+    return false;
+}
+```
+
+---
+
+## Exercício 3
+
+```java
+public boolean isPrime(int n){
+    if(n <= 1) return false;
+    for(int i = 2; i < n; i++){
+        if(n % i == 0)
+            return false;
+    }
+    return true;
+}
+```
+
+```java
+import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Test;
+
+public class IsPrimeTest {
+
+    @Test
+    void testNumerosPrimos() {
+        assertTrue(isPrime(2));
+        assertTrue(isPrime(3));
+        assertTrue(isPrime(7));
+    }
+
+    @Test
+    void testNumerosNaoPrimos() {
+        assertFalse(isPrime(1));
+        assertFalse(isPrime(4));
+        assertFalse(isPrime(9));
+    }
+
+    @Test
+    void testCasosEspeciais() {
+        assertFalse(isPrime(0));
+        assertFalse(isPrime(-10));
+    }
+
+    public boolean isPrime(int n){
+        if(n <= 1) return false;
+        for(int i = 2; i < n; i++){
+            if(n % i == 0)
+                return false;
+        }
+        return true;
+    }
+}
+```
+
+```java
+/**
+ * Verifica se um número é primo.
+ */
+public boolean isPrime(int n){
+    if(n <= 1) return false;
+    for(int i = 2; i < n; i++){
+        if(n % i == 0)
+            return false;
+    }
+    return true;
+}
+```
